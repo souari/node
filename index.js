@@ -1,12 +1,15 @@
 var app = require('express')();
 
 /**
- * 
+ * Global path
  */
 app.get('/', function (req, res) {
     res.send('Welcome to node calculator');
 });
 
+/**
+ * Add function
+ */
 app.get('/add', function (req, res) {
 	try {
 		res.send((parseInt(req.query.a) + parseInt(req.query.b)).toString());	
@@ -15,6 +18,9 @@ app.get('/add', function (req, res) {
 	}
 });
 
+/**
+ * Substraction function
+ */
 app.get('/sub', function (req, res) {
     try {
 		res.send((parseInt(req.query.a) - parseInt(req.query.b)).toString());	
@@ -23,6 +29,9 @@ app.get('/sub', function (req, res) {
 	}
 });
 
+/**
+ * Multiplication function
+ */
 app.get('/mul', function (req, res) {
     try {
 		res.send((parseInt(req.query.a) * parseInt(req.query.b)).toString());	
@@ -31,6 +40,9 @@ app.get('/mul', function (req, res) {
 	}
 });
 
+/**
+ * Division function
+ */
 app.get('/div', function (req, res) {
     try {
 		res.send((parseInt(req.query.a) / parseInt(req.query.b)).toString());	
@@ -39,6 +51,9 @@ app.get('/div', function (req, res) {
 	}
 });
 
+/**
+ * Listening function
+ */
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
