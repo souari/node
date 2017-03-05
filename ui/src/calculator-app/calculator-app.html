@@ -1,27 +1,77 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
 
 <dom-module id="calculator-app">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
-  </template>
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
 
-  <script>
-    Polymer({
+			paper-card {
+				padding: 10px;
+			}
 
-      is: 'calculator-app',
+			paper-input#resultpi {
+				text-align: right;
+			}
 
-      properties: {
-        prop1: {
-          type: String,
-          value: 'calculator-app',
-        },
-      },
+			paper-button {
+				width: 30px;
+				height: 30px;
+				--paper-button-ink-color: red;
+			}
 
-    });
-  </script>
+		</style>
+
+		<paper-card>
+			<paper-content>
+				<paper-input id="resultpi" type="numeric" value="{{result}}"></paper-input>
+				<div class="layout horizontal center">
+					<paper-button raised>+</paper-button>
+					<paper-button raised>-</paper-button>
+					<paper-button raised>*</paper-button>
+					<paper-button raised>d</paper-button>
+				</div>
+				<div class="layout horizontal center">
+					<paper-button raised>0</paper-button>
+					<paper-button raised>1</paper-button>
+					<paper-button raised>2</paper-button>
+					<paper-button raised>3</paper-button>
+				</div>
+				<div class="layout horizontal center">
+					<paper-button raised>0</paper-button>
+					<paper-button raised>1</paper-button>
+					<paper-button raised>2</paper-button>
+					<paper-button raised>3</paper-button>
+				</div>
+				<div class="layout horizontal center">
+					<paper-button raised>0</paper-button>
+					<paper-button raised>1</paper-button>
+					<paper-button raised>2</paper-button>
+					<paper-button raised>3</paper-button>
+				</div>
+			</paper-content>
+		</paper-card>
+
+	</template>
+
+	<script>
+		Polymer({
+
+			is: 'calculator-app',
+
+			properties: {
+				result: {
+					type: Number,
+					value: 0
+				},
+			},
+
+		});
+	</script>
 </dom-module>
